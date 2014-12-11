@@ -13,4 +13,10 @@
         <item>Červený</item>
     </string-array>
 
+    <string name="menu_new_game">Nová hra</string>
+    <string name="menu_exit">Ukončit</string>    
+    <string name="menu_player_one">Hráč 1</string>
+    <string name="menu_player_two">Hráč 2</string>
+    
+    <string name="error_empty_et">Hráči musí vyplnit svá jména</string>
 </resources>

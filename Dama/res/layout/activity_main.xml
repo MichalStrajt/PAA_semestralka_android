@@ -1,12 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical">
+    	
+	    <EditText 
+	        android:id="@+id/et_player_one"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="8dp"
+	        android:layout_marginRight="8dp"
+	        android:hint="@string/menu_player_one"/>
+	    
+	    <EditText 
+	        android:id="@+id/et_player_two"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="8dp"
+	        android:layout_marginRight="8dp"
+	        android:hint="@string/menu_player_two"/>
+	    
+	    <Button 
+	        android:id="@+id/btn_new_game"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="8dp"
+	        android:layout_marginRight="8dp"
+	        android:text="@string/menu_new_game"
+	        />
+	</LinearLayout>
+        
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/menu_exit"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
