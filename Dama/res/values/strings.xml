@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dama</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="active_player">Na tahu je hráč:</string>
+    <string name="nof_figures">Hráči zbývá figur:</string>
+    <string name="have_to_jump">Hráč musí skočit protivníkovu figuru</string>
+    
+    <string-array name="player_strings">
+        <item>Modrý</item>
+        <item>Červený</item>
+    </string-array>
+
+</resources>
