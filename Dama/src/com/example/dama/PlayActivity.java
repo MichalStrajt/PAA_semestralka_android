@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -14,6 +16,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -59,10 +63,15 @@ public class PlayActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  
 		
 		context = getApplicationContext();
+		Intent i = getIntent();
 		
-		init_strings();
+		init_strings(i);
 		get_screen_width();
 		
 		init_background();
@@ -91,6 +100,7 @@ public class PlayActivity extends Activity {
 		rl_board.addView(iv_board);
 		rl_board.addView(ll_info);
 		init_figures();
+		tv_active_player_set_text();
 		tv_number_set_text();
 	}
 	
@@ -109,11 +119,12 @@ public class PlayActivity extends Activity {
 	/*
 	 * Metoda na inicializaci retezcu ze souboru strings.xml
 	 */
-	private void init_strings(){
+	private void init_strings(Intent i){
 		ACTIVE_PLAYER_STRING = getResources().getString(R.string.active_player);
 		NOF_PLAYER_FIGURES_STRING = getResources().getString(R.string.nof_figures);
 		HAVE_TO_JUMP_STRING = getResources().getString(R.string.have_to_jump);
-		PLAYER_STRINGS = getResources().getStringArray(R.array.player_strings);
+		Bundle b = i.getExtras();
+		PLAYER_STRINGS = b.getStringArray(getResources().getString(R.string.intent_players));
 	}
 	
 	/*

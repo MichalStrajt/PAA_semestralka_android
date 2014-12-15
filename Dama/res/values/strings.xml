@@ -7,11 +7,6 @@
     <string name="active_player">Na tahu je hráč:</string>
     <string name="nof_figures">Hráči zbývá figur:</string>
     <string name="have_to_jump">Hráč musí skočit protivníkovu figuru</string>
-    
-    <string-array name="player_strings">
-        <item>Modrý</item>
-        <item>Červený</item>
-    </string-array>
 
     <string name="menu_new_game">Nová hra</string>
     <string name="menu_exit">Ukončit</string>    
@@ -19,4 +14,6 @@
     <string name="menu_player_two">Hráč 2</string>
     
     <string name="error_empty_et">Hráči musí vyplnit svá jména</string>
+    
+    <string name="intent_players">player_names</string>
 </resources>

@@ -2,8 +2,11 @@ package com.example.dama;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +22,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); 
 		setContentView(R.layout.activity_main);
 		
 		init_components();		
@@ -37,13 +44,19 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.btn_new_game:
-			String player_one_name = et_player_one.getText().toString();
-			String player_two_name = et_player_two.getText().toString();
+			String [] players = new String [2];
+			players[0] = et_player_one.getText().toString();
+			players[1] = et_player_two.getText().toString();
 			
-			if(player_one_name.equals("") || player_two_name.equals("")){
+			if(players[0].equals("") || players[1].equals("")){
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_empty_et), Toast.LENGTH_SHORT).show();
 			} else {			
 				Intent intent = new Intent(getApplicationContext(), PlayActivity.class);
+				
+				Bundle b = new Bundle();
+				b.putStringArray(getResources().getString(R.string.intent_players), players);
+				intent.putExtras(b);
+				
 				startActivity(intent);
 			}
 			break;
