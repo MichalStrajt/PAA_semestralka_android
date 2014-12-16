@@ -2,6 +2,7 @@ package com.example.dama;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -108,11 +109,18 @@ public class PlayActivity extends Activity {
 	 * Metoda na zjisteni sirky obrazovky
 	 * Sirku ulozi do konstanty DISPLAY_WIDTH
 	 */
+	@SuppressLint("NewApi")
 	private void get_screen_width(){
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
-		display.getSize(size);
-		DISPLAY_WIDTH = size.x;
+		int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+		if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB_MR2){
+			display.getSize(size);
+			DISPLAY_WIDTH = size.x;
+		} else {			
+			DISPLAY_WIDTH = display.getWidth();
+		}		
+		
 		SQUAE_SIZE = DISPLAY_WIDTH / FIGURES_IN_LINE;
 	}
 	
