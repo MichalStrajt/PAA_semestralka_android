@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PAA - přednáška 3 - strict mode</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<ul id="ul">
+		<li>
+			Zadej jména hráčů:
+		</li>
+    	<li>
+       		<input id="li_player_one" type="text" name="player_one" placeholder="Hráč 1" />
+    	</li>
+    	<li>
+		    <input id="li_player_two" type="text" name="player_two" placeholder="Hráč 2" />
+		</li>
+		<li>
+		    <button id="btn_start" class="submit" type="submit">Spustit hru</button>
+		</li>
+	</ul>
+	<canvas id="cnv_background_drawer" style="position: absolute; z-index: 0; visibility: hidden;"></canvas>
+	<canvas id="cnv_main_drawer" style="position: absolute; z-index: 1; visibility: hidden;"></canvas>
+	<textarea id="ta_info" rows="1" style="position: absolute; visibility: hidden;"></textarea>
+    <script type="text/javascript" src="DamaHTML5.js"></script> 
+</body>
+</html>

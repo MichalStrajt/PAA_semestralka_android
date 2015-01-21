@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">dama</string>
+    
+    <string name="active_player">Na tahu je hráč:</string>
+    <string name="have_to_jump">Hráč musí skočit protivníkovu figuru</string>
+
+    <string name="menu_new_game">Nová hra</string>
+    <string name="menu_exit">Ukončit</string>    
+    <string name="menu_player_one">Hráč 1</string>
+    <string name="menu_player_two">Hráč 2</string>
+    
+    <string name="error_empty_et">Hráči musí vyplnit svá jména</string>
+    
+    <string name="intent_players">player_names</string>
+</resources>
